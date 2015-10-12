@@ -1,14 +1,18 @@
 package com.walmart.instagramclient;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.makeramen.roundedimageview.RoundedTransformationBuilder;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 
 import java.util.List;
 
@@ -24,12 +28,14 @@ public class InstagramPhotoRecycleAdapter extends RecyclerView.Adapter<Instagram
         public TextView tvCaption;
         public ImageView ivPhoto;
         public TextView tvUsername;
+        public ImageView ivProfilePicture;
 
         public ViewHolder(View itemView) {
             super(itemView);
             tvCaption = (TextView) itemView.findViewById(R.id.tvCaption);
             ivPhoto = (ImageView) itemView.findViewById(R.id.ivPhoto);
             tvUsername = (TextView) itemView.findViewById(R.id.tvUsername);
+            ivProfilePicture = (ImageView) itemView.findViewById(R.id.ivProfilePhoto);
 
         }
     }
@@ -72,6 +78,15 @@ public class InstagramPhotoRecycleAdapter extends RecyclerView.Adapter<Instagram
         holder.tvUsername.setText(photo.getUsername());
         Picasso.with(context).load(photo.getImageUrl()).placeholder(R.mipmap.ic_launcher).into(holder.ivPhoto);
 
+        Transformation transformation = new RoundedTransformationBuilder()
+                .borderColor(Color.BLACK)
+                .borderWidthDp(3)
+                .cornerRadiusDp(30)
+                .oval(false)
+                .build();
+        Log.i("ProfileURL:", photo.getProfileImageUrl());
+        Picasso.with(context).load(photo.getProfileImageUrl()).fit().placeholder(R.mipmap.ic_launcher).
+                transform(transformation).into(holder.ivProfilePicture);
 
     }
 

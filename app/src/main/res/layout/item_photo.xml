@@ -3,9 +3,29 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
  >
 
+    <com.makeramen.roundedimageview.RoundedImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/ivProfilePhoto"
+        android:scaleType="fitCenter"
+        app:riv_corner_radius="30dip"
+        app:riv_border_width="2dip"
+        app:riv_border_color="#333333"
+        app:riv_mutate_background="true"
+        app:riv_tile_mode="repeat"
+        app:riv_oval="true"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
+        android:layout_below="@id/ivProfilePhoto"
+
         android:id="@+id/ivPhoto"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -13,7 +33,7 @@
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:minHeight="50dp"
-        android:paddingTop="10dp"/>
+        android:paddingTop="50dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,6 +56,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+
         />
 
 </RelativeLayout>
