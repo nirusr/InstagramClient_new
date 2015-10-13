@@ -9,10 +9,10 @@ Time spent: 16 hours spent in total
 The following **required** functionality is completed:
 
 * [X] User can **scroll through current popular photos** from Instagram
-* [ ] For each photo displayed, user can see the following details:
+* [X] For each photo displayed, user can see the following details:
   * [X] Graphic, Caption, Username
   * [X] Relative timestamp, 
-  * [ ] like count, 
+  * [X] like count, 
   * [X] user profile image
 
 The following **optional** features are implemented:
@@ -38,7 +38,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-https://goo.gl/photos/Ld9ypgMe7REuoCVE7
+https://goo.gl/photos/QLUm5r4hX1H1JiYc8
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
