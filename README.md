@@ -11,7 +11,9 @@ The following **required** functionality is completed:
 * [X] User can **scroll through current popular photos** from Instagram
 * [ ] For each photo displayed, user can see the following details:
   * [X] Graphic, Caption, Username
-  * [ ] Relative timestamp, like count, user profile image
+  * [ ] Relative timestamp, 
+  * [ ] like count, 
+  * [X] user profile image
 
 The following **optional** features are implemented:
 
@@ -36,7 +38,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-https://goo.gl/photos/TgWNMDjm2hbFDWkA6
+https://goo.gl/photos/unujLEFY5udBdaRb9
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
