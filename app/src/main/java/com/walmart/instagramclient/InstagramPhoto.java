@@ -12,6 +12,7 @@ public class InstagramPhoto {
     private int likesCount;
     private String type;
     private String profileImageUrl;
+    private String createdTime;
 
     public String getUsername() {
         return username;
@@ -68,5 +69,13 @@ public class InstagramPhoto {
 
     public void setProfileImageUrl(String profileImageUrl) {
         this.profileImageUrl = profileImageUrl;
+    }
+
+    public String getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(String createdTime) {
+        this.createdTime = createdTime;
     }
 }

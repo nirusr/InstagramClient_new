@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -101,8 +102,12 @@ public class PhotosActivity extends AppCompatActivity {
                         photo.setLikesCount(photoJson.getJSONObject("likes").getInt("count"));
                         photo.setType(photoJson.getString("type"));
                         photo.setProfileImageUrl(photoJson.getJSONObject("user").getString("profile_picture"));
-                        //Add decoded values to photo array
-                        photos.add(photo);
+                        photo.setCreatedTime(photoJson.getString("created_time"));
+                        Log.i("Created time:" , photoJson.getString("created_time"));
+
+
+                                //Add decoded values to photo array
+                                photos.add(photo);
 
                     }
                 } catch (JSONException e) {
@@ -160,6 +165,7 @@ public class PhotosActivity extends AppCompatActivity {
                         photo.setLikesCount(photoJson.getJSONObject("likes").getInt("count"));
                         photo.setType(photoJson.getString("type"));
                         photo.setProfileImageUrl(photoJson.getJSONObject("user").getString("profile_picture"));
+                        photo.setCreatedTime(photoJson.getString("created_time"));
                         //Add decoded values to photo array
                         photos.add(photo);
 

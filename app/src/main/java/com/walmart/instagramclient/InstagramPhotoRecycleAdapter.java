@@ -3,6 +3,7 @@ package com.walmart.instagramclient;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,7 @@ public class InstagramPhotoRecycleAdapter extends RecyclerView.Adapter<Instagram
         public ImageView ivPhoto;
         public TextView tvUsername;
         public ImageView ivProfilePicture;
+        public TextView tvCreatedTime;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -36,6 +38,7 @@ public class InstagramPhotoRecycleAdapter extends RecyclerView.Adapter<Instagram
             ivPhoto = (ImageView) itemView.findViewById(R.id.ivPhoto);
             tvUsername = (TextView) itemView.findViewById(R.id.tvUsername);
             ivProfilePicture = (ImageView) itemView.findViewById(R.id.ivProfilePhoto);
+            tvCreatedTime = (TextView) itemView.findViewById(R.id.tvCreatedTime);
 
         }
     }
@@ -88,6 +91,10 @@ public class InstagramPhotoRecycleAdapter extends RecyclerView.Adapter<Instagram
         Picasso.with(context).load(photo.getProfileImageUrl()).fit().placeholder(R.mipmap.ic_launcher).
                 transform(transformation).into(holder.ivProfilePicture);
 
+        //Convert Timestamp
+        Long longCreatedTime = Long.valueOf(photo.getCreatedTime());
+        CharSequence createdTime = DateUtils.getRelativeTimeSpanString(longCreatedTime*1000, System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS);
+        holder.tvCreatedTime.setText(createdTime.toString());
     }
 
     @Override
