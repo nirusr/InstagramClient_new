@@ -15,6 +15,8 @@ import com.makeramen.roundedimageview.RoundedTransformationBuilder;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 /**
@@ -31,6 +33,7 @@ public class InstagramPhotoRecycleAdapter extends RecyclerView.Adapter<Instagram
         public TextView tvUsername;
         public ImageView ivProfilePicture;
         public TextView tvCreatedTime;
+        public TextView tvLikesCount;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -39,6 +42,7 @@ public class InstagramPhotoRecycleAdapter extends RecyclerView.Adapter<Instagram
             tvUsername = (TextView) itemView.findViewById(R.id.tvUsername);
             ivProfilePicture = (ImageView) itemView.findViewById(R.id.ivProfilePhoto);
             tvCreatedTime = (TextView) itemView.findViewById(R.id.tvCreatedTime);
+            tvLikesCount = (TextView) itemView.findViewById(R.id.tvLikesCount);
 
         }
     }
@@ -101,6 +105,11 @@ public class InstagramPhotoRecycleAdapter extends RecyclerView.Adapter<Instagram
 
         //if (createdTime >= DateUtils.HOUR_IN_MILLIS)
         //Log.v("Abbr Time:",getAbbrevidatedTimeSpan(longCreatedTime*1000));
+
+        holder.tvLikesCount.setText(String.format("%,d", photo.getLikesCount()) + " likes");
+       // Log.v("string formatter:", String.format("%,d", photo.getLikesCount()));
+
+
     }
 
     @Override
