@@ -26,13 +26,14 @@
         android:layout_alignParentTop="true"
         android:text="2 hrs ago"
         android:id="@+id/tvCreatedTime"
+        android:paddingRight="2dp"
         />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@id/tvCreatedTime"
-        android:paddingLeft="2dp"
+        android:paddingLeft="10dp"
         android:src="@drawable/clock"
         android:layout_alignBottom="@+id/tvCreatedTime"
         android:layout_alignParentTop="true"
@@ -41,9 +42,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_below="@id/ivProfilePhoto"
-
         android:id="@+id/ivPhoto"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"

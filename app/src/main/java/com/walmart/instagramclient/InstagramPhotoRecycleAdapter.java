@@ -87,14 +87,20 @@ public class InstagramPhotoRecycleAdapter extends RecyclerView.Adapter<Instagram
                 .cornerRadiusDp(30)
                 .oval(false)
                 .build();
-        Log.i("ProfileURL:", photo.getProfileImageUrl());
+        //Log.i("ProfileURL:", photo.getProfileImageUrl());
         Picasso.with(context).load(photo.getProfileImageUrl()).fit().placeholder(R.mipmap.ic_launcher).
                 transform(transformation).into(holder.ivProfilePicture);
 
         //Convert Timestamp
-        Long longCreatedTime = Long.valueOf(photo.getCreatedTime());
-        CharSequence createdTime = DateUtils.getRelativeTimeSpanString(longCreatedTime*1000, System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS);
-        holder.tvCreatedTime.setText(createdTime.toString());
+        Long longCreatedTimeInMillis = Long.valueOf(photo.getCreatedTime())*1000;
+
+        /*CharSequence createdTime = DateUtils.getRelativeTimeSpanString(longCreatedTime*1000,
+                System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS, DateUtils.FORMAT_ABBREV_TIME);*/
+
+        holder.tvCreatedTime.setText(getAbbrevidatedTimeSpan(longCreatedTimeInMillis));
+
+        //if (createdTime >= DateUtils.HOUR_IN_MILLIS)
+        //Log.v("Abbr Time:",getAbbrevidatedTimeSpan(longCreatedTime*1000));
     }
 
     @Override
@@ -106,5 +112,34 @@ public class InstagramPhotoRecycleAdapter extends RecyclerView.Adapter<Instagram
         mPhotos.clear();
         notifyDataSetChanged();
     }
+
+
+    //Get Abbreviated Data String
+
+    private static final String ABBR_YEAR = "y";
+    private static final String ABBR_WEEK = "w";
+    private static final String ABBR_DAY = "d";
+    private static final String ABBR_HOUR = "h";
+    private static final String ABBR_MINUTE = "m";
+    public static String getAbbrevidatedTimeSpan(long timeMillis) {
+        long span = Math.max(System.currentTimeMillis()-timeMillis, 0);
+        if (span >= DateUtils.YEAR_IN_MILLIS) {
+            return (span / DateUtils.YEAR_IN_MILLIS) + ABBR_YEAR;
+        }
+        if (span >= DateUtils.WEEK_IN_MILLIS) {
+            return (span / DateUtils.WEEK_IN_MILLIS) + ABBR_WEEK;
+        }
+        if (span >= DateUtils.DAY_IN_MILLIS) {
+            return (span / DateUtils.DAY_IN_MILLIS) + ABBR_DAY;
+        }
+        if (span >= DateUtils.HOUR_IN_MILLIS) {
+            return (span / DateUtils.HOUR_IN_MILLIS) + ABBR_HOUR;
+        }
+        return (span / DateUtils.MINUTE_IN_MILLIS) + ABBR_MINUTE;
+
+
+
+    }
+
 
 }
