@@ -11,7 +11,7 @@ The following **required** functionality is completed:
 * [X] User can **scroll through current popular photos** from Instagram
 * [ ] For each photo displayed, user can see the following details:
   * [X] Graphic, Caption, Username
-  * [ ] Relative timestamp, 
+  * [X] Relative timestamp, 
   * [ ] like count, 
   * [X] user profile image
 
@@ -20,7 +20,7 @@ The following **optional** features are implemented:
 * [X] User can **pull-to-refresh** popular stream to get the latest popular photos
 * [ ] Show latest comments for each photo
 * [ ] Display each photo with the same style and proportions as the real Instagram
-* [ ] Display each user profile image using a RoundedImageViewDisplay each user profile image using a [RoundedImageView](https://github.com/vinc3m1/RoundedImageView)
+* [X] Display each user profile image using a RoundedImageViewDisplay each user profile image using a [RoundedImageView](https://github.com/vinc3m1/RoundedImageView)
 * [ ] Display a nice default placeholder graphic for each image during loading
 * [ ] Improved the user interface through styling and coloring
 
@@ -38,7 +38,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-https://goo.gl/photos/unujLEFY5udBdaRb9
+https://goo.gl/photos/Ld9ypgMe7REuoCVE7
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
